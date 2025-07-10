@@ -1,4 +1,4 @@
-import { handler } from '../lambda/combine'; // ajusta la ruta según tu estructura
+import { handler } from '../lambda/combine';
 
 describe('Combine Lambda', () => {
   it('should return 200 and an array of characters with pokemons', async () => {
