@@ -4,14 +4,14 @@ import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb';
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
-exports.handler = async (event: any) => {
+export const handler = async (event: any) => {
   // Extract specific properties from the event object
   const queryParams = event.queryStringParameters || {};
   const limit = parseInt(queryParams.limit) || 5;
   const page = parseInt(queryParams.page) || 0;
 
   const scanResult = await docClient.send(new ScanCommand({
-    TableName: 'CharacterTable',
+    TableName: process.env.TABLE_NAME,
   }));
 
   const totalItems = scanResult.Items?.length || 0;

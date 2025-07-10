@@ -7,7 +7,7 @@ import { StoreDto } from './dto/store.dto';
 import { PostDB } from './interfaces/post-db';
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
-exports.handler = async (event: any) => {
+export const handler = async (event: any) => {
   // Extract specific properties from the event object
   const { body } = event;
 
@@ -37,7 +37,7 @@ exports.handler = async (event: any) => {
     }
 
     await docClient.send(new PutCommand({
-      TableName: 'PostTable',
+      TableName: process.env.TABLE_NAME,
       Item: item
     }));
 

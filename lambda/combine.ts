@@ -12,15 +12,15 @@ const API_BASE_URL_2 = `https://pokeapi.co/api`;
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
-const CACHE_KEY = 'combined-v1';
+const CACHE_KEY = 'fusionar-cache-v1';
 const CACHE_TTL_MS = 30 * 60 * 1000; // 30 minutes
 
-exports.handler = async (event: any) => {
+export const handler = async (event: any) => {
 
   try {
 
     const cache = await docClient.send(new GetCommand({
-      TableName: 'CharacterTable',
+      TableName: process.env.TABLE_NAME,
       Key: { id: CACHE_KEY }
     }));
 
@@ -49,13 +49,13 @@ exports.handler = async (event: any) => {
 
     await Promise.all(newStarWarCharacters.map(character => (
       docClient.send(new PutCommand({
-        TableName: 'CharacterTable',
+        TableName: process.env.TABLE_NAME,
         Item: character
       }))
     )))
 
     await docClient.send(new PutCommand({
-      TableName: 'CharacterTable',
+      TableName: process.env.TABLE_NAME,
       Item: {
         id: CACHE_KEY,
         timestamp: Date.now(),
