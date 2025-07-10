@@ -112,7 +112,7 @@ npm run test
 ```
 ---
 
-### 📘Documentación Swagger / OpenAPI
+### `📘Documentación Swagger / OpenAPI`
 
 En el root del proyecto existe un archivo `swagger.json` la cual contiene documentado todo los endpoints de la API Rest. Se podrá observar pegando el swagger.json en la siguiente dirección web: https://editor.swagger.io/
 
@@ -122,8 +122,3 @@ En el root del proyecto existe un archivo `swagger.json` la cual contiene docume
 - Este proyecto se mantiene dentro de la capa gratuita de AWS.
 - No se uso recursos con costo adicional (ECR, S3, etc.)
 - Las tablas en DynamoDB tienen una politica de destrucción, por lo que cuando se ejecute `cdk destroy`, se eliminara sin ningún inconveniente.
-
-### `Instalación y Deployment`
-```
-
-```
