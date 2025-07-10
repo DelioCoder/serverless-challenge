@@ -39,6 +39,7 @@ Este reposotirio contiene un API REST utilizando tecnologías serverless en AWS.
 El sistema utiliza **AWS Cognito** con una UI alojada para registro e inicio de sesión:
 
 📥 **[Iniciar sesión en Cognito](https://serverless-app-auth.auth.us-east-1.amazoncognito.com/login?client_id=TU_CLIENT_ID&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+profile&redirect_uri=https://example/success)**  
+📌 Una vez iniciado sesión, lo redireccionara a otra pagina que esta de ejemplo. Se debera copiar toda la url, y luego tomar solo el id_token para usarlo con el Bearer `id_token`
 📌 *Reemplazar `TU_CLIENT_ID` con el client real si no es automático*
 
 ---
