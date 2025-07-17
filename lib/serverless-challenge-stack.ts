@@ -67,7 +67,7 @@ export class ServerlessChallengeStack extends cdk.Stack {
     const combineFn = new lambda.Function(this, 'CombineLambda', {
       runtime: lambda.Runtime.NODEJS_LATEST,
       handler: 'combine.handler',
-      code: lambda.Code.fromAsset('lambda'),
+      code: lambda.Code.fromAsset('resources/lambda'),
       memorySize: 256,
       timeout: cdk.Duration.seconds(5)
     });
@@ -75,7 +75,7 @@ export class ServerlessChallengeStack extends cdk.Stack {
     const storeFn = new lambda.Function(this, 'StoreLambda', {
       runtime: lambda.Runtime.NODEJS_LATEST,
       handler: 'store.handler',
-      code: lambda.Code.fromAsset('lambda'),
+      code: lambda.Code.fromAsset('resources/lambda'),
       memorySize: 256,
       timeout: cdk.Duration.seconds(5)
     });
@@ -83,7 +83,7 @@ export class ServerlessChallengeStack extends cdk.Stack {
     const recordsFn = new lambda.Function(this, 'RecordLambda', {
       runtime: lambda.Runtime.NODEJS_LATEST,
       handler: 'records.handler',
-      code: lambda.Code.fromAsset('lambda'),
+      code: lambda.Code.fromAsset('resources/lambda'),
       memorySize: 256,
       timeout: cdk.Duration.seconds(5)
     });
