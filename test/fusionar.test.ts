@@ -1,4 +1,4 @@
-import { handler } from '../lambda/combine';
+import { handler } from '../resources/lambda/combine';
 
 describe('Combine Lambda', () => {
   it('should return 200 and an array of characters with pokemons', async () => {
