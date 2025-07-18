@@ -29,8 +29,7 @@ export const getCache = async (CACHE_KEY: string, tableName: string) => {
 
 export const getCharacters = async (tableName: string) => {
     try {
-        const command = new ScanCommand({ TableName: tableName });
-        const result = await client.send(command);
+        const result = await docClient.send(new ScanCommand({ TableName: tableName }));
         const items = result.Items || [];
 
         const filtered = items.filter(item => item.id !== 'fusionar-cache-v1');
