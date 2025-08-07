@@ -5,7 +5,7 @@ beforeAll(() => {
 });
 
 
-describe('POST /store', () => {
+describe('POST /almacenar', () => {
   it('should store user data and return 201', async () => {
     const res = await axios.post(
       `${process.env.BASE_URL}/almacenar`,
