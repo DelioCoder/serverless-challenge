@@ -1,5 +1,9 @@
 import { handler } from '../resources/lambda/combine';
 
+beforeAll(() => {
+  process.env.TABLE_NAME = 'CharacterTable';
+});
+
 describe('Combine Lambda', () => {
   it('should return 200 and an array of characters with pokemons', async () => {
     const response = await handler({} as any);
