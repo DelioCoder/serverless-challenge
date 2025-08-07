@@ -5,9 +5,9 @@ export const handler = async (event: any) => {
   const tableName = process.env.TABLE_NAME;
 
   // Extract specific properties from the event object
-  const queryParams = event.queryStringParameters || {};
+  const queryParams = event.queryStringParameters || { limit: 5, page: 1 };
   const limit = parseInt(queryParams.limit) || 5;
-  const page = parseInt(queryParams.page) || 0;
+  const page = parseInt(queryParams.page) || 1;
 
   console.log({limit, page});
 
