@@ -5,7 +5,7 @@ beforeAll(() => {
 });
 
 
-describe('GET /record', () => {
+describe('GET /historial', () => {
   it('Debe retornar codigo 200 y regresar lista de personajes', async () => {
     const { data } = await axios.get(`${process.env.BASE_URL}/historial?limit=5&page=1`,
       {
