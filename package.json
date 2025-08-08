@@ -8,9 +8,11 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "test:cucumber": "cucumber-js ./test/gherkin/features/**/*.feature --require-module ts-node/register --require ./test/gherkin/steps/**/*.ts"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^12.1.0",
     "@types/jest": "^29.5.14",
     "@types/node": "22.7.9",
     "aws-cdk": "2.1020.2",
